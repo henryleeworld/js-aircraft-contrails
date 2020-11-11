@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta property="og:title" content="飛機凝結尾" />
+        <meta property="og:description" content="當飛機劃越天際，而且環境的條件合適，飛機所排放的廢氣就可能在飛機後方產生出凝結尾，也可以說是飛機引擎燃 燒的副產品，與寒冬「呵氣成霧」的原理有異曲同工之妙。" />
+        <meta property="og:locale" content="zh_TW" />
+        <meta property="og:type" content="website" />
+        <link rel="stylesheet" href="css/aircraft-contrails.css" />
+        <title>飛機凝結尾</title>
+    </head>
+    <body>
+        <svg id="patternSVG" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="sqrs" width="20" height="20" patternUnits="userSpaceOnUse" id="pulseBg" viewBox="0 0 20 20">
+                    <rect class="gridRect" x="0" y="0" width="20" height="20" fill="none" />
+                </pattern>
+            </defs>
+            <rect id="grid" class="grid" y="-100" fill="url(#sqrs)" width="100%" height="200%" stroke="none" />
+        </svg>
+
+        <svg id="mainSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+            <defs>
+                <filter id="glow" x="-100%" y="-100%" width="250%" height="250%">
+                    <feGaussianBlur stdDeviation="8" result="coloredBlur" />
+                    <feOffset dx="0" dy="0" result="offsetblur"></feOffset>
+                    <feFlood id="glowAlpha" flood-color="#FFF" flood-opacity="1"></feFlood>
+                    <feComposite in2="offsetblur" operator="in"></feComposite>
+                    <feMerge>
+                        <feMergeNode />
+                        <feMergeNode in="SourceGraphic"></feMergeNode>
+                    </feMerge>
+                </filter>
+            </defs>
+
+            <g>
+                <polyline class="trailLine" />
+                <polyline class="trailLine" />
+                <polyline class="trailLine" />
+                <polyline class="trailLine" />
+                <polyline class="trailLine" />
+                <polyline class="trailLine" />
+                <path
+                    class="plane"
+                    d="M20,13.7v-1.4l-8.6-5.1V3.5c0-1-0.6-3.5-1.4-3.5S8.6,2.4,8.6,3.5v3.7L0,12.2v1.4l8.6-1.8l0.5,5l-2.5,1.9V20
+    l3.5-0.8l3.5,0.8v-1.2L11,16.9l0.5-5L20,13.7z"
+                />
+                <path
+                    class="plane"
+                    d="M20,13.7v-1.4l-8.6-5.1V3.5c0-1-0.6-3.5-1.4-3.5S8.6,2.4,8.6,3.5v3.7L0,12.2v1.4l8.6-1.8l0.5,5l-2.5,1.9V20
+    l3.5-0.8l3.5,0.8v-1.2L11,16.9l0.5-5L20,13.7z"
+                />
+                <path
+                    class="plane"
+                    d="M20,13.7v-1.4l-8.6-5.1V3.5c0-1-0.6-3.5-1.4-3.5S8.6,2.4,8.6,3.5v3.7L0,12.2v1.4l8.6-1.8l0.5,5l-2.5,1.9V20
+    l3.5-0.8l3.5,0.8v-1.2L11,16.9l0.5-5L20,13.7z"
+                />
+                <path
+                    class="plane"
+                    d="M20,13.7v-1.4l-8.6-5.1V3.5c0-1-0.6-3.5-1.4-3.5S8.6,2.4,8.6,3.5v3.7L0,12.2v1.4l8.6-1.8l0.5,5l-2.5,1.9V20
+    l3.5-0.8l3.5,0.8v-1.2L11,16.9l0.5-5L20,13.7z"
+                />
+                <path
+                    class="plane"
+                    d="M20,13.7v-1.4l-8.6-5.1V3.5c0-1-0.6-3.5-1.4-3.5S8.6,2.4,8.6,3.5v3.7L0,12.2v1.4l8.6-1.8l0.5,5l-2.5,1.9V20
+    l3.5-0.8l3.5,0.8v-1.2L11,16.9l0.5-5L20,13.7z"
+                />
+                <path
+                    class="plane"
+                    d="M20,13.7v-1.4l-8.6-5.1V3.5c0-1-0.6-3.5-1.4-3.5S8.6,2.4,8.6,3.5v3.7L0,12.2v1.4l8.6-1.8l0.5,5l-2.5,1.9V20
+    l3.5-0.8l3.5,0.8v-1.2L11,16.9l0.5-5L20,13.7z"
+                />
+            </g>
+        </svg>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous" defer></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/MotionPathPlugin.min.js"
+            integrity="sha512-2vgSeT4mD0azBGIp91Fnho9fbT8ZG8zu5c+mK//TGxj4YNX2mRAwEZHtZsMRwA7ObqH6Vl7mMOdvkzNVTuhUcA=="
+            crossorigin="anonymous"
+            defer
+        ></script>
+        <script src="js/DrawSVGPlugin3.min.js" defer></script>
+        <script src="js/CustomEase3.min.js" defer></script>
+        <script src="js/aircraft-contrails.js" defer></script>
+    </body>
+</html>
